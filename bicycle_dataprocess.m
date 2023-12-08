@@ -92,7 +92,6 @@ for i = 1:length(uniqueUpSlopes)
     end
 end
 
-
 % Initialize a structure to store slope and corresponding speeds for downhill
 slopeSpeedInfoDown = struct('slope', {}, 'originalIndices', {});
 
@@ -140,14 +139,11 @@ for i = 1:numUniqueSlopesDown
 end
 
 totalNumberOfSteps = 500;  
-
 % Simulate Markov chain for uphill
 [simulatedMarkovChainUphill, simulatedSpeedsBySlopeUphill] = simulateMarkovChainUphill(uphillTransitionMatrices, slopeSpeedInfoUp, filteredUphillSpeeds, totalNumberOfSteps, numSpeedBins);
 
-
 % Simulate Markov chain for downhill
 [simulatedMarkovChainDownhill, simulatedSpeedsBySlopeDownhill] = simulateMarkovChainDownhill(downhillTransitionMatrices, slopeSpeedInfoDown, filteredDownhillSpeeds, totalNumberOfSteps, numSpeedBins);
-
 
 % Calculate the stationary distribution using eigenvector method
 T_Uphill = uphillTransitionMatrices{2}; 
@@ -219,7 +215,7 @@ end
 % title('Simulated Speeds for Uphill');
 % xlabel('Time Steps');
 % ylabel('Speed');
-% 
+ 
 % % Display transition matrices for uphill
 % subplot(2, 1, 2);
 % uphillConcatenatedMatrix = cat(1, uphillTransitionMatrices{:});
@@ -231,14 +227,14 @@ end
 % 
 % % Plot results for downhill simulation
 % figure('Name', 'Simulated Speeds and Transition Matrices for Downhill');
-% 
+ 
 % % Plot simulated speeds
 % subplot(2, 1, 1);
 % plot(simulatedMarkovChainDownhill, 'LineWidth', 2);
 % title('Simulated Speeds for Downhill');
 % xlabel('Time Steps');
 % ylabel('Speed');
-% 
+ 
 % % Display transition matrices for downhill
 % subplot(2, 1, 2);
 % downhillConcatenatedMatrix = cat(1, downhillTransitionMatrices{:});
@@ -293,7 +289,6 @@ plot(downhillSpeeds(1:min(totalNumberOfSteps, length(downhillSpeeds))), 'LineWid
 title('Original Speeds - downhill');
 xlabel('Time Steps');
 ylabel('Speed');
-
 
 
 
