@@ -1,4 +1,3 @@
-
 function [simulatedMarkovChain, simulatedSpeedsBySlope, stationaryDistribution] = simulateMarkovChainUphill(transitionMatrices, slopeSpeedInfo, filteredSpeeds, totalNumberOfSteps, numSpeedBins)
     numSlopes = length(slopeSpeedInfo);
 
