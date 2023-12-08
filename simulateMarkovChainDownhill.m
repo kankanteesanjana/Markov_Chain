@@ -1,4 +1,3 @@
-
 function [simulatedMarkovChain, simulatedSpeedsBySlope] = simulateMarkovChainDownhill(transitionMatrices, slopeSpeedInfo, filteredSpeeds, totalNumberOfSteps, numSpeedBins)
     numSlopes = length(slopeSpeedInfo);
 
@@ -96,4 +95,5 @@ function validIndices = getValidIndices(currentSpeedIndex, numSpeedBins)
     % Generate valid indices
     validIndices = leftBound:rightBound;
 end
+
 
